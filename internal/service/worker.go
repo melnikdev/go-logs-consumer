@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/ClickHouse/clickhouse-go/v2"
-	"github.com/melnikdev/go-logs-customer/internal/config"
+	"github.com/melnikdev/go-logs-consumer/internal/config"
 	"github.com/segmentio/kafka-go"
 )
 

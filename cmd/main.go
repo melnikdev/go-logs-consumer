@@ -7,8 +7,8 @@ import (
 	"sync"
 
 	"github.com/joho/godotenv"
-	"github.com/melnikdev/go-logs-customer/internal/config"
-	"github.com/melnikdev/go-logs-customer/internal/service"
+	"github.com/melnikdev/go-logs-consumer/internal/config"
+	"github.com/melnikdev/go-logs-consumer/internal/service"
 	"github.com/segmentio/kafka-go"
 
 	"github.com/ClickHouse/clickhouse-go/v2"
@@ -31,6 +31,7 @@ func main() {
 			Database: config.ClickHouse.Database,
 		},
 	})
+
 	if err != nil {
 		log.Fatal("Error while connecting to ClickHouse:", err)
 	}
