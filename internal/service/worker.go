@@ -36,9 +36,6 @@ func NewWorker(db clickhouse.Conn, config *config.Config) WorkerI {
 func (w worker) SaveBatchLogMessages(logChannel <-chan kafka.Message, wg *sync.WaitGroup) {
 	defer wg.Done()
 	batch := []LogMessage{}
-	log.Printf("Worker started")
-	log.Println(w.config.Worker.BatchTime)
-	log.Println(time.Duration(w.config.Worker.BatchTime))
 	ticker := time.NewTicker(time.Duration(w.config.Worker.BatchTime) * time.Second)
 
 	for {
